@@ -1,0 +1,50 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "test api",
+        "description": "",
+        "id": "do-nothing;test-api",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 5,
+            "name": "I open a browser",
+            "match": {},
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 6,
+            "name": "I am on the student access page",
+            "match": {},
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Do nothing",
+    "description": "",
+    "id": "do-nothing",
+    "keyword": "Feature",
+    "uri": "test1.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@smilogin"
+      },
+      {
+        "line": 1,
+        "name": "@TEST"
+      }
+    ]
+  }
+]

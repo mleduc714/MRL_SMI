@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="RunCukesTest" project="samee-mi" tests="3" started="3" failures="0" errors="0" ignored="2">
+  <testsuite name="samee_mi_automation.samee_mi.RunCukesTest" time="0.001">
+    <testsuite name="Feature: Belly" time="0.001">
+      <testsuite name="Scenario: a few cukes" time="0.001" incomplete="true">
+        <skipped/>
+        <testcase name="Given I have 42 cukes in my belly" classname="Scenario: a few cukes" time="0.0"/>
+        <testcase name="When I wait 1 hour" classname="Scenario: a few cukes" time="0.001" ignored="true"/>
+        <testcase name="Then my belly should growl" classname="Scenario: a few cukes" time="0.0" ignored="true"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testrun>

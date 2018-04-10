@@ -1,0 +1,7 @@
+//BranchProjectTracker__/Users/leducm/Documents/GitHub/samee-slms/.git_MRL_TEST=<?xml version\="1.0" encoding\="UTF-8"?>\n<projects branch\="MRL_TEST">\n<project>/automation/samee-slms-automation</project>\n<project>/scholastic.common-impl</project>\n<project>/scholastic.slms-impl</project>\n</projects>
+//BranchProjectTracker__/Users/leducm/Documents/GitHub/samee-slms/.git_master=<?xml version\="1.0" encoding\="UTF-8"?>\n<projects branch\="master">\n<project>/automation/samee-slms-automation</project>\n<project>/scholastic.common-impl</project>\n<project>/scholastic.slms-impl</project>\n</projects>
+//BranchProjectTracker__/Users/leducm/Documents/GitHub/samee-smi/.git_MRL_TEST1=<?xml version\="1.0" encoding\="UTF-8"?>\n<projects branch\="MRL_TEST1">\n<project>/automation/BATs</project>\n<project>/automation/testdata/SMI_GenerateData</project>\n<project>/server/scholastic.smi-impl</project>\n</projects>
+//BranchProjectTracker__/Users/leducm/Documents/GitHub/samee-smi/.git_master=<?xml version\="1.0" encoding\="UTF-8"?>\n<projects branch\="master">\n<project>/automation/BATs</project>\n<project>/automation/testdata/SMI_GenerateData</project>\n<project>/server/scholastic.smi-impl</project>\n</projects>
+eclipse.preferences.version=1
+resourcehistory_graph_split=847,152
+resourcehistory_rev_split=700,300

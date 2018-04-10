@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>samee-mi-automation</groupId>
+	<artifactId>samee-mi</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>Cucumber-Java-JUnit Project</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<sam-automation-tool.version>1.0.19</sam-automation-tool.version>
+		<spaces.pageobjects.version>1.0.9</spaces.pageobjects.version>
+		<qa-selenium-toolkit.version>1.0.5</qa-selenium-toolkit.version>
+		<cucumber.version>1.2.5</cucumber.version>
+		<log4j.version>2.10.0</log4j.version>
+
+		<!-- test variables -->
+		<ngdash.test.browser>chrome</ngdash.test.browser>
+		<ngdash.test.samcUrl>https://qa-samconnect.education.scholastic.com</ngdash.test.samcUrl>
+		<ngdash.test.dashboardClientUrl>https://qa-dashboard.education.scholastic.com/dashboard/ngdash-client</ngdash.test.dashboardClientUrl>
+		<ngdash.test.dashboardServerUrl>https://qa-dashboard.education.scholastic.com</ngdash.test.dashboardServerUrl>
+		<ngdash.test.zone>DASH</ngdash.test.zone>
+		<ngdash.test.ucn>51102</ngdash.test.ucn>
+		<ngdash.test.siteid>h511000002</ngdash.test.siteid>
+		<ngdash.test.sam.admin.username>schuser</ngdash.test.sam.admin.username>
+		<ngdash.test.sam.admin.password>NEWp@551</ngdash.test.sam.admin.password>
+		<ngdash.test.sam.teacher.username>ndtyson</ngdash.test.sam.teacher.username>
+		<ngdash.test.sam.teacher.password>Welcome_1</ngdash.test.sam.teacher.password>
+		<ngdash.test.skipSamcLogin>false</ngdash.test.skipSamcLogin>
+		<ngdash.test.demoDelay>0</ngdash.test.demoDelay>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>com.hmhco.seleniumtools</groupId>
+			<artifactId>qa-selenium-toolkit</artifactId>
+			<version>${qa-selenium-toolkit.version}</version>
+			<exclusions>
+				<!-- <exclusion> <groupId>org.apache.logging.log4j</groupId> <artifactId>log4j-core</artifactId> 
+					</exclusion> <exclusion> <groupId>org.apache.logging.log4j</groupId> <artifactId>log4j-api</artifactId> 
+					</exclusion> -->
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.hmhco.sam</groupId>
+			<artifactId>automation-tool</artifactId>
+			<version>${sam-automation-tool.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.hmhco.seleniumtools</groupId>
+					<artifactId>qa-selenium-toolkit</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>hmh.isg.qa</groupId>
+			<artifactId>spaces.pageobjects</artifactId>
+			<version>${spaces.pageobjects.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.hmhco.seleniumtools</groupId>
+					<artifactId>qa-selenium-toolkit</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>info.cukes</groupId>
+					<artifactId>cucumber-java</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>info.cukes</groupId>
+					<artifactId>cucumber-jvm</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>info.cukes</groupId>
+					<artifactId>cucumber-junit</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+					<compilerArgument>-Werror</compilerArgument>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
