@@ -21,19 +21,12 @@
 		<log4j.version>2.10.0</log4j.version>
 
 		<!-- test variables -->
-		<ngdash.test.browser>chrome</ngdash.test.browser>
-		<ngdash.test.samcUrl>https://qa-samconnect.education.scholastic.com</ngdash.test.samcUrl>
-		<ngdash.test.dashboardClientUrl>https://qa-dashboard.education.scholastic.com/dashboard/ngdash-client</ngdash.test.dashboardClientUrl>
-		<ngdash.test.dashboardServerUrl>https://qa-dashboard.education.scholastic.com</ngdash.test.dashboardServerUrl>
-		<ngdash.test.zone>DASH</ngdash.test.zone>
-		<ngdash.test.ucn>51102</ngdash.test.ucn>
-		<ngdash.test.siteid>h511000002</ngdash.test.siteid>
-		<ngdash.test.sam.admin.username>schuser</ngdash.test.sam.admin.username>
-		<ngdash.test.sam.admin.password>NEWp@551</ngdash.test.sam.admin.password>
-		<ngdash.test.sam.teacher.username>ndtyson</ngdash.test.sam.teacher.username>
-		<ngdash.test.sam.teacher.password>Welcome_1</ngdash.test.sam.teacher.password>
-		<ngdash.test.skipSamcLogin>false</ngdash.test.skipSamcLogin>
-		<ngdash.test.demoDelay>0</ngdash.test.demoDelay>
+		<mi.test.browser>chrome</mi.test.browser>
+		<mi.student.access>http://localhost:8080/slms/studentaccess</mi.student.access>
+		<mi.sam.admin>samadmin</mi.sam.admin>
+		<mi.sam.password>Welcome_1</mi.sam.password>
+		
+
 	</properties>
 	<dependencies>
 		<dependency>
@@ -102,18 +95,54 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.5.1</version>
-				<configuration>
-					<encoding>UTF-8</encoding>
-					<source>${maven.compiler.source}</source>
-					<target>${maven.compiler.target}</target>
-					<compilerArgument>-Werror</compilerArgument>
-				</configuration>
-			</plugin>
-		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.20.1</version>
+					<configuration>
+						<systemPropertyVariables>
+							<webdriver.gecko.driver>${webdriver.gecko.driver}</webdriver.gecko.driver>
+							<!-- <webdriver.firefox.bin>/Applications/Firefox.app/Contents/MacOS/firefox-bin</webdriver.firefox.bin> -->
+							<webdriver.chrome.driver>${webdriver.chrome.driver}</webdriver.chrome.driver>
+							<webdriver.safari.driver>${webdriver.safari.driver}</webdriver.safari.driver>
+							<webdriver.ie.driver>${webdriver.ie.driver}</webdriver.ie.driver>
+							<webdriver.edge.driver>${webdriver.edge.driver}</webdriver.edge.driver>
+							
+							<!-- test variables -->
+							<mi.test.browser>${mi.test.browser}</mi.test.browser>
+							<mi.student.access>${mi.student.access}</mi.student.access>
+							<mi.sam.admin>${mi.sam.admin}</mi.sam.admin>
+							<mi.sam.password>${mi.sam.password}</mi.sam.password>
+							
+						</systemPropertyVariables>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>com.lazerycode.selenium</groupId>
+					<artifactId>driver-binary-downloader-maven-plugin</artifactId>
+					<version>1.0.17</version>
+					<configuration>
+						<!-- root directory that downloaded driver binaries will be stored 
+							in -->
+						<rootStandaloneServerDirectory>lib</rootStandaloneServerDirectory>
+						<!-- Where you want to store downloaded zip files -->
+						<downloadedZipFileDirectory>zips</downloadedZipFileDirectory>
+						<!-- Location of a custom repository map -->
+                			<customRepositoryMap>src/test/resources/RepositoryMap.xml</customRepositoryMap>
+						<overwriteFilesThatExist>true</overwriteFilesThatExist>
+						<onlyGetDriversForHostOperatingSystem>false</onlyGetDriversForHostOperatingSystem>
+					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>selenium</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 </project>
